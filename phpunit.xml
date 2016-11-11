@@ -7,12 +7,26 @@
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"
          processIsolation="false"
-         stopOnFailure="true"
-         syntaxCheck="true"
+         stopOnFailure="false"
+         syntaxCheck="false"
 >
     <testsuites>
         <testsuite name="Package Test Suite">
-            <directory suffix=".php">./vendor/tcg/voyager/tests/</directory>
+            <directory suffix=".php">./tests/</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./src/</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+        <log type="coverage-text" target="build/logs/coverage.txt"/>
+        <log type="coverage-html" target="build/logs/coverage" charset="UTF-8" yui="true" highlight="true"/>
+    </logging>
+    <php>
+        <env name="APP_DEBUG" value="true"/>
+        <env name="APP_KEY" value="AckfSECXIvnK5r28GVIWUAxmbBSjTsmF"/>
+    </php>
 </phpunit>

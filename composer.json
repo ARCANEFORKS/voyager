@@ -12,11 +12,20 @@
         "intervention/image": "^2.3",
         "doctrine/dbal": "^2.5"
     },
+    "require-dev": {
+        "phpunit/phpcov": "~3.0",
+        "phpunit/phpunit": "~5.0",
+        "orchestra/testbench": "~3.3.0"
+    },
     "autoload": {
         "psr-4": {
-            "TCG\\Voyager\\": "/src"
+            "TCG\\Voyager\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "TCG\\Voyager\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "stable"
-
 }
